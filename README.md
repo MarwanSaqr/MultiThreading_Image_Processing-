@@ -1,7 +1,11 @@
 # Multi threading with image processing using java
-The aim of this project is to convert PNG or JPG files from the RGB format into grayscale using parallelization.
+The aim of this project is to convert PNG or JPG files from the RGB format into three other output formats using parallelization:
 
-## parallelization
+## 1. A grayscale image
+## 2. A histogram
+## 3. An image with altered brightness
+
+# Parallelization
 User can select mode of parallelism into three tybes:
 
 ### 1-Blocking
@@ -25,4 +29,5 @@ Processes every pixel in sequence on one thread (usually the calling thread).
 It’s the simplest approach—no concurrency at all—but is the slowest for large images because it can’t take advantage of multiple CPU cores.
 
 ## Output
-Image that converted to gray in destination you want.
+Image that converted to what you selected before and time for running process.
+

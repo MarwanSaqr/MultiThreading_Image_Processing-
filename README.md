@@ -5,6 +5,8 @@ The aim of this project is to convert PNG or JPG files from the RGB format into 
 ## 2. A histogram
 ## 3. An image with altered brightness
 
+# Running
+I make a video for project run if you want to see it [🔗 ](https://drive.google.com/file/d/1pyzyTL-A8Exs3lW6Y7l2NrYagIfaYuLW/view?usp=drive_link)
 # Parallelization
 User can select mode of parallelism into three tybes:
 

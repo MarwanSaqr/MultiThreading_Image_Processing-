@@ -1,35 +1,49 @@
-# Multi threading with image processing using java
-The aim of this project is to convert PNG or JPG files from the RGB format into three other output formats using parallelization:
+# Multi-threading with Image Processing using Java
 
-## 1. A grayscale image
-## 2. A histogram
-## 3. An image with altered brightness
+This project demonstrates the use of parallelization in Java to process PNG or JPG files by converting them from RGB format into three different output types:
 
-# Running
-I make a video for project run if you want to see it [🔗 ](https://drive.google.com/file/d/1pyzyTL-A8Exs3lW6Y7l2NrYagIfaYuLW/view?usp=drive_link)
-# Parallelization
-User can select mode of parallelism into three tybes:
+1. **Grayscale image**  
+2. **Histogram**  
+3. **Image with altered brightness**  
 
-### 1-Blocking
+---
 
-Typically splits the image into chunks and processes them—often using multiple threads—but then waits (blocks) on each chunk to finish before returning the final image.
+## 🎬 Demo
 
-During that wait, if you ran it on the UI thread, the interface would freeze until completion.
+I’ve recorded a video showing how the project runs. You can watch it here:  
+[🔗 Project Demo](https://drive.google.com/file/d/1pyzyTL-A8Exs3lW6Y7l2NrYagIfaYuLW/view?usp=drive_link)
 
-### 2-Non‑blocking
+---
 
-Kicks off work asynchronously (e.g., with callbacks, futures, or an executor), so the GUI thread isn’t held up.
+## ⚙️ Parallelization Modes
 
-You could (in a more advanced version) show a progress bar or let the user interact while conversion is in progress.
+You can choose from three modes of parallelism:
 
-Once all pieces are done, it assembles them and returns the result, all without locking up the UI.
+### 1. **Blocking**
 
-### 3-Single‑threaded
+- Splits the image into chunks and processes them (often using multiple threads).  
+- Waits (blocks) until all chunks are processed before assembling the final image.  
+- If run on the UI thread, it may freeze the interface until completion.
 
-Processes every pixel in sequence on one thread (usually the calling thread).
+### 2. **Non-blocking**
 
-It’s the simplest approach—no concurrency at all—but is the slowest for large images because it can’t take advantage of multiple CPU cores.
+- Executes processing asynchronously (using callbacks, futures, or an executor).  
+- Keeps the UI responsive — ideal for real-time progress bars or interactive interfaces.  
+- Once all chunks are processed, the image is assembled and returned without freezing the UI.
 
-## Output
-Image that converted to what you selected before and time for running process.
+### 3. **Single-threaded**
 
+- Processes each pixel sequentially on a single thread (usually the calling thread).  
+- The simplest method — no concurrency involved.  
+- Slowest option for large images as it doesn't utilize multiple CPU cores.
+
+---
+
+## 🖼️ Output
+
+The output includes:
+
+- The image converted into the selected format  
+- The time taken to complete the processing  
+
+---
